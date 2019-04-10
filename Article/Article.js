@@ -9,12 +9,16 @@ class Article {
     this.expandButton = domElement.querySelector(".expandButton");
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = "expand";
-
-    this.domElement.classList.add("article-close")
+    this.expandButton.textContent = "Click to Open";
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+  }
+
+  createCloseButton() {
+    let closeButton = document.createElement("span");
+    closeButton.textContent = "Close";
+    closeButton.classList.add("expandButton");
   }
 
   expandArticle() {
@@ -22,12 +26,13 @@ class Article {
     articles.forEach(elem => {
       if(elem != this.domElement){
         elem.classList.remove("article-open");
-        elem.classList.add("article-close");
-        
+        elem.classList.add("article-close");        
+        elem.querySelector(".expandButton").textContent = "Click to Open";
       } 
-
     })
+    
     this.domElement.classList.toggle("article-open");
+    this.expandButton.textContent = "Click to Close";
     this.domElement.classList.remove("article-close");
   }
 }

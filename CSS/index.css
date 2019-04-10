@@ -71,6 +71,14 @@ body {
 .menu--open {
   display: block;
 }
+.menu2--open {
+  transform: translateX(350px);
+}
+.menu2 {
+  display: block;
+  left: -350px;
+  transition: transform 1000ms;
+}
 .articles {
   margin-top: 95px;
 }
@@ -111,8 +119,8 @@ body {
 }
 .article-open {
   height: 400px;
-  transition: 500ms;
+  transition: all 500ms;
 }
 .article-close {
-  transition: 500ms;
+  transition: all 500ms;
 }

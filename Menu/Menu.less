@@ -5,10 +5,10 @@
 }
 
 .menu {
-  display: none;
+  //display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  //left: 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -25,6 +25,17 @@
   text-align: center;
 }
 
+.menu2 {
+  display:block;
+  left: -352px;
+  transition:transform 1000ms;
+}
+
+.menu1{
+  display:none;
+  left:0;
+}
+
 .menu--open {
   display: block;
 }
@@ -33,8 +44,9 @@
   transform:translateX(350px);
 }
 
-.menu2 {
-  display:block;
-  left: -350px;
-  transition:transform 1000ms;
+
+
+.menu1Button, .menu2Button {
+  cursor: pointer;
+  margin:0 10px;
 }

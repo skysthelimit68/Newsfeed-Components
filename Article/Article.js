@@ -15,11 +15,11 @@ class Article {
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
   }
 
-  createCloseButton() {
+  /*createCloseButton() {
     let closeButton = document.createElement("span");
     closeButton.textContent = "Close";
     closeButton.classList.add("expandButton");
-  }
+  }*/
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
@@ -30,10 +30,14 @@ class Article {
         elem.querySelector(".expandButton").textContent = "Click to Open";
       } 
     })
-    
     this.domElement.classList.toggle("article-open");
-    this.expandButton.textContent = "Click to Close";
-    this.domElement.classList.remove("article-close");
+    if(this.domElement.classList.contains("article-open")){
+      this.expandButton.textContent = "Click to Close";
+      this.domElement.classList.remove("article-close");
+    } else {
+      this.expandButton.textContent = "Click to Open";
+      this.domElement.classList.add("article-close");
+    }
   }
 }
 

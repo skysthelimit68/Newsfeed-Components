@@ -15,12 +15,6 @@ class Article {
     this.expandButton.addEventListener("click", this.expandArticle.bind(this));
   }
 
-  /*createCloseButton() {
-    let closeButton = document.createElement("span");
-    closeButton.textContent = "Close";
-    closeButton.classList.add("expandButton");
-  }*/
-
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     articles.forEach(elem => {
@@ -52,6 +46,6 @@ class Article {
 let articles = document.querySelectorAll(".article");
 
 articles.forEach(elem => {
-  let article =  new Article(elem);
+  return new Article(elem);
 })
 
